@@ -1,0 +1,5 @@
+USER|vader|Darth Vader|/home/vader
+USER|yoda|Master Yoda|/home/yoda
+DIRECTORY|/home/vader/public|vader|public
+DIRECTORY|/home/vader/private|vader|private
+FILE|/home/vader/file|vader|public|This is a a file

@@ -1,0 +1,14 @@
+Relatório 0 (rel0.txt)
+
+
+Decidimos colocar uma classe FileManager. Esta inclui o estado actual do
+sistema de ficheiros (_current_file_system). Para além disso, permite
+fazer a ligação entre a interface do programa e o sistema de ficheiros
+(FileSystem), assim como criar, iniciar, guardar e sair do sistema de
+ficheiros. A ligação é feita através de pedidos que o FileManager faz ao
+FileSystem que, por sua vez, concretiza-os. 
+
+Notam-se também no nosso UML várias relações de composição. Utilizámos esta
+abordagem porque não faz sentido ter algumas dessas classes sem ter outras.
+Por exemplo, não faz sentido ter um Directory sem ter um FileSystem, ou ter um
+_main_directory sem ter um User. 

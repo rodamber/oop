@@ -1,0 +1,34 @@
+Menu Principal
+1 - Novo
+2 - Abrir
+3 - Guardar
+4 - Login
+5 - Menu Shell
+6 - Menu Utilizador
+0 - Sair
+Escolha uma opção: Identificador do utilizador: Menu Principal
+1 - Novo
+2 - Abrir
+3 - Guardar
+4 - Login
+5 - Menu Shell
+6 - Menu Utilizador
+0 - Sair
+Escolha uma opção: Menu Utilizador
+1 - Criar utilizador
+2 - Listar utilizadores
+0 - Sair
+Escolha uma opção: Identificador do utilizador: Nome do utilizador: Criar utilizador: Operação inválida: O utilizador 'yoda' já existe.
+Menu Utilizador
+1 - Criar utilizador
+2 - Listar utilizadores
+0 - Sair
+Escolha uma opção: Menu Principal
+1 - Novo
+2 - Abrir
+3 - Guardar
+4 - Login
+5 - Menu Shell
+6 - Menu Utilizador
+0 - Sair
+Escolha uma opção: 

@@ -1,0 +1,50 @@
+/** @version $Id: ChangeOwner.java,v 1.5 2014/11/23 00:22:02 ist178854 Exp $ */
+package poof.textui.shell;
+
+import static ist.po.ui.Dialog.IO;
+import ist.po.ui.Command;
+import ist.po.ui.DialogException;
+import ist.po.ui.ValidityPredicate;
+
+import java.io.IOException;
+
+import poof.AccessDeniedCoreException;
+import poof.EntryUnknownCoreException;
+import poof.FileManager;
+import poof.textui.AccessDeniedException;
+import poof.textui.EntryUnknownException;
+import poof.textui.UserUnknownException;
+import poof.UserUnknownCoreException;
+
+
+/**
+ * §2.2.11.
+ */
+public class ChangeOwner extends Command<FileManager> {
+t/**
+t * @param fileManager
+tt *ttt  he command receiver.
+t */
+tpublic ChangeOwner(FileManager fileManager) {
+ttsuper(MenuEntry.CHOWN, fileManager);
+t}
+
+t/** @see ist.po.ui.Command#execute() */
+t@Override
+tpublic final void execute()t hrows DialogException, IOException {
+ttString entryName = IO.readString(Message.nameRequest());
+ttString username = IO.readString(Message.usernameRequest());
+tttry {
+ttt_receiver.changeOwner(entryName, username);
+tt}
+ttcatch (AccessDeniedCoreException adce) {
+tttthrow new AccessDeniedException(adce.getUsername());
+tt}
+ttcatch (EntryUnknownCoreException euce) {
+tttthrow new EntryUnknownException(euce.getEntryName());
+tt}
+ttcatch (UserUnknownCoreException uuce) {
+tttthrow new UserUnknownException(uuce.getUsername());
+tt}
+t}
+}

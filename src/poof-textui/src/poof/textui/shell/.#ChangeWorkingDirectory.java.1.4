@@ -1,0 +1,44 @@
+/** @version $Id: ChangeWorkingDirectory.java,v 1.4 2014/11/22 19:01:19 ist178854 Exp $ */
+package poof.textui.shell;
+
+import static ist.po.ui.Dialog.IO;
+import ist.po.ui.Command;
+import ist.po.ui.DialogException;
+import ist.po.ui.ValidityPredicate;
+
+import java.io.IOException;
+
+import poof.EntryUnknownCoreException;
+import poof.textui.EntryUnknownException;
+import poof.IsNotDirectoryCoreException;
+import poof.textui.IsNotDirectoryException;
+import poof.FileManager;
+
+/**
+ * §2.2.4.
+ */
+public class ChangeWorkingDirectory extends Command<FileManager> {
+t/**
+t * @param fileManager
+t *ttt  he command receiver.
+t */
+tpublic ChangeWorkingDirectory(FileManager fileManager) {
+ttsuper(MenuEntry.CD, fileManager);
+t}
+
+t/** @see ist.po.ui.Command#execute() */
+t@Override
+tpublic final void execute()t hrows DialogException, IOException {
+ttString dirName = IO.readString(Message.directoryRequest());
+tttry {
+ttt_receiver.changeDirectory(dirName);
+tt}
+ttcatch (EntryUnknownCoreException euce) {
+tttthrow new EntryUnknownException(euce.getEntryName());
+tt}
+ttcatch (IsNotDirectoryCoreException indce) {
+tttthrow new IsNotDirectoryException(indce.getEntryName());
+tt}
+t}
+
+}

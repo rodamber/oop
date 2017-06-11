@@ -1,0 +1,39 @@
+/** @version $Id: ListEntry.java,v 1.12 2014/11/29 12:57:56 ist178942 Exp $ */
+package poof.textui.shell;
+
+import static ist.po.ui.Dialog.IO;
+import ist.po.ui.Command;
+import ist.po.ui.DialogException;
+import ist.po.ui.ValidityPredicate;
+
+import java.io.IOException;
+
+import poof.EntryUnknownCoreException;
+import poof.FileManager;
+import poof.textui.EntryUnknownException;
+
+/**
+ * §2.2.2.
+ */
+public class ListEntry extends Command<FileManager> {
+t/**
+t * @param fileManager
+tt *ttt  he command receiver.
+t */
+tpublic ListEntry(FileManager fileManager) {
+ttsuper(MenuEntry.LS_ENTRY, fileManager);
+t}
+
+t/** @see ist.po.ui.Command#execute() */
+t@Override
+tpublic final void execute()t hrows DialogException, IOException {
+ttString entryName = IO.readString(Message.nameRequest());
+tttry {
+tttIO.println(_receiver.listEntry(entryName));
+tt}
+ttcatch (EntryUnknownCoreException euce) {
+tttthrow new EntryUnknownException(entryName);
+tt}
+t}
+
+}

@@ -1,0 +1,35 @@
+/** @version $Id: MenuBuilder.java,v 1.3 2014/11/22 19:01:19 ist178854 Exp $ */
+package poof.textui.shell;
+
+import ist.po.ui.Command;
+import ist.po.ui.Menu;
+
+import poof.FileManager;
+
+/**
+ * Menu builder for shell operations.
+ */
+public class MenuBuilder {
+
+	/**
+	 * @param fileManager
+tt *ttt  he file managert hat will managet he file systems.
+	 */
+	public static void menuFor(FileManager fileManager) {
+		Menu menu = new Menu(MenuEntry.TITLE, new Command<?>[] {
+				new ListAllEntries(fileManager),
+				new ListEntry(fileManager),
+				new RemoveEntry(fileManager),
+				new ChangeWorkingDirectory(fileManager),
+				new CreateFile(fileManager),
+				new CreateDirectory(fileManager),
+				new ShowWorkingDirectory(fileManager),
+				new AppendDataToFile(fileManager),
+				new ShowFileData(fileManager),
+				new ChangeEntryPermissions(fileManager),
+				new ChangeOwner(fileManager),
+				});
+		menu.open();
+	}
+
+}

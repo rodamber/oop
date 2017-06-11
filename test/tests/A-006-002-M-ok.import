@@ -1,0 +1,6 @@
+USER|pal|Palpatine|/home/pal
+USER|vader|Darth Vader|/home/vader
+USER|yoda|Master Yoda|/home/yoda
+USER|leia|/Leia Organa|/home/leia
+DIRECTORY|/home/yoda/droids|yoda|public
+DIRECTORY|/home/vader/friends|vader|public

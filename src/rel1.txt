@@ -1,0 +1,46 @@
+rel01.txt
+
+
+Funcionalidade e limitações:
+
+(Supostamente) faz tudo o que é pedido para a entrega intermédia. Isto inclui:
+
+- Leitura e interpretação de ficheiros *.import;
+- Criar, abrir e guardar o sistema de ficheiros;
+- Login de utilizador;
+- Listar as entradas do directório actual (que nesta entrega ainda não é possível
+	alterar navegando pelos directórios, apenas fazendo login com outro utilizador,
+	o que vai fazer mudar o directório actual para o seu directório principal);
+- Imprimir o caminho absoluto do directório actual;
+- Listar os utilizadores do sistema de ficheiros.
+
+
+Estruturas de dados:
+
+Tanto na classe FileSystem, como na classe Directory, tivemos de escolher uma
+estrutura de dados. Na FileSystem, esta servia para guardar os utilizadores do
+sistema de ficheiros e na Directory para guardar as entradas que a directoria
+continha. Em ambos os casos optamos por um TreeMap. Considerámos também
+utilizar um HashMap. No entanto, embora o custo de inserção e procura seja
+muito menor no caso do HashMap, o facto de o TreeMap ser um estrutura
+ordenada, teve mais peso. Isto porque, à partida, os utilizadores do sistema
+de ficheiros, deverão listar mais vezes as directorias/utilizadores do que
+criar novos.
+
+
+Outras considerações:
+
+No core foi criada uma nova classe de excepções, FileManagerException (que,
+sinceramente, achamos que se devia chamar FileSystemException, mas isso fica
+para a próxima entrega), com as quais as excepções do textui estão directamente
+relacionadas. Basicamente, o core lança as suas excepções, o textui apanha-as
+e lança as suas correspondentes. Isto permite eliminar dependências do core
+em relação ao textui.
+
+No nosso código, de modo a evitar repetição ao máximo  e ao mesmo tempo tornar
+o código mais legível, optámos por criar métodos de asserção. Associada a isto
+está a criação de algumas excepções (IllegalNameCoreException, 
+DirectoryIsParentCoreException, DirectoryIsSelfCoreException).
+
+
+

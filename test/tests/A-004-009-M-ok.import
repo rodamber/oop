@@ -1,0 +1,6 @@
+USER|vader|Darth Vader|/home/vader
+USER|yoda|Master Yoda|/home/yoda
+DIRECTORY|/home/vader/friends|vader|public
+DIRECTORY|/home/vader/friends/family|vader|public
+FILE|/home/vader/friends/calendar|vader|public|10:00 kill rebels; 12:00 lunch with emperor
+FILE|/home/vader/r2d2|vader|public|picture of r2d2

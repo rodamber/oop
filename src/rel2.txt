@@ -1,0 +1,46 @@
+rel2.txt
+
+
+Funcionalidade e limitações:
+
+O projecto implementa toda a funcionalidade exigida pelo enunciado.
+
+
+Correcções:
+
+- Corrigido o nome da função que violava as regras de nomenclatura de java;
+- A leitura do ficheiro "data.import" deixou de ser feita no textui e passou a 
+ser feita no core pois estava a violar a separação textui/core.
+
+
+Novas funcionalidades em relação à entrega intermédia:
+
+- Todas as funções que operam sobre directórios estão funcionais;
+- Criação da classe File e implementação das funções que incidem sobre 
+ficheiros;
+- Inserção de atributos nas excepções do core (que sao depois apanhadas pelo 
+textui) para evitar que seja o textui a procurar a fonte do erro e termos a 
+certeza de que é a correta.
+
+
+Considerações:
+
+Optámos por renomear a classe FileManagerException para CoreException pois 
+adequa-se melhor.
+Eliminámos também as excepções, por nós criadas, IllegalNameCoreException, 
+DirectoryIsParentCoreException e DirectoryIsSelfCoreException 
+devido à existência de outros asserts que as tornam desnecessárias 
+(assertEntryDoesntExist, assertEntryIsRemovable).
+
+Quanto à listagem das entradas, utilizadores e da impressão do caminho 
+absoluto, decidimos tratar a formatação das strings no core e enviá-las ao textui no formato pedido no enunciado.
+
+Após a exposição a matéria relativamente a padrões de desenho nas aulas 
+teóricas podemos agora identificar alguns no nosso projecto:
+- Nas classes Entry, Directory e File podemos reconhecer a estrutura o padrão 
+Composite;
+- A classe FileManager é uma Façade.
+Verificámos também que poderíamos ter usado o padrão Visitor entre o textui e o 
+core para definir o formato das listagens, assim como da impressão do caminho 
+absoluto.
+

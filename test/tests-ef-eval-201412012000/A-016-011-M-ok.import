@@ -1,0 +1,12 @@
+USER|vader|Darth Vader|/home/vader
+USER|yoda|Master Yoda|/home/yoda
+USER|solo|Han Solo|/home/solo
+DIRECTORY|/home/vader/public|vader|public
+DIRECTORY|/home/vader/private|vader|private
+DIRECTORY|/home/vader/public/p|yoda|public
+DIRECTORY|/home/vader/public/priv|yoda|private
+DIRECTORY|/home/vader/private/pr|yoda|private
+DIRECTORY|/home/vader/private/pu|yoda|public
+FILE|/home/vader/public/filePriv|vader|private|This is a private file
+FILE|/home/vader/public/filePub|vader|public|This is a public file
+FILE|/home/root/file|root|public|This is another file
